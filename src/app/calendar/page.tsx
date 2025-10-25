@@ -21,10 +21,10 @@ export default function CalendarPage() {
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   const eventsOnSelectedDate = schoolEvents.filter(
-    (event) => date && isSameDay(event.date, date)
+    (event) => date && isSameDay(new Date(event.date), date)
   );
 
-  const eventDays = schoolEvents.map(event => event.date);
+  const eventDays = schoolEvents.map(event => new Date(event.date));
 
   return (
     <div className="space-y-8">

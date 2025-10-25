@@ -29,45 +29,47 @@ export const newsItems = [
   },
 ];
 
+const now = new Date();
+
 export const schoolEvents = [
   {
     id: 1,
-    date: new Date(2024, 5, 1),
+    date: new Date(now.getFullYear(), 5, 1),
     title: "Summer Break Begins",
     description: "School closed for summer vacation.",
     category: "Holiday",
   },
   {
     id: 2,
-    date: new Date(2024, 4, 27),
+    date: new Date(now.getFullYear(), 4, 27),
     title: "Memorial Day",
     description: "School closed in observance of Memorial Day.",
     category: "Holiday",
   },
   {
     id: 3,
-    date: new Date(2024, 4, 20),
+    date: new Date(now.getFullYear(), 4, 20),
     title: "Final Exams (Grades 9-11)",
     description: "Week-long final examinations for underclassmen.",
     category: "Academics",
   },
   {
     id: 4,
-    date: new Date(2024, 4, 24),
+    date: new Date(now.getFullYear(), 4, 24),
     title: "Senior Prom",
     description: "Annual Senior Prom at The Grand Ballroom.",
     category: "Social Event",
   },
   {
     id: 5,
-    date: new Date(2024, 4, 30),
+    date: new Date(now.getFullYear(), 4, 30),
     title: "Graduation Ceremony",
     description: "Class of 2024 Graduation Ceremony on the main field.",
     category: "Ceremony",
   },
   {
     id: 6,
-    date: new Date(),
+    date: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16, 0, 0),
     title: "Today's Soccer Match",
     description: "Varsity Soccer vs. Northwood High at 4:00 PM.",
     category: "Sports",

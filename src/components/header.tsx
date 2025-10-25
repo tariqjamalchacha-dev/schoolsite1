@@ -15,6 +15,8 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
@@ -101,6 +103,9 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left">
+                <SheetHeader>
+                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                </SheetHeader>
                 <div className="p-4">
                   <Link href="/" className="mb-8 flex items-center gap-2">
                     <School className="h-7 w-7 text-accent" />

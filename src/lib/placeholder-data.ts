@@ -69,7 +69,7 @@ export const schoolEvents = [
   },
   {
     id: 6,
-    date: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16, 0, 0),
+    date: new Date(2024, 5, 12, 16, 0, 0),
     title: "Today's Soccer Match",
     description: "Varsity Soccer vs. Northwood High at 4:00 PM.",
     category: "Sports",
@@ -125,4 +125,13 @@ export const staffMembers = [
     phone: "(123) 456-7895",
     imageId: "staff-6",
   },
+];
+
+export const galleryItems = [
+  { id: 1, title: "Collaborative Learning", description: "Students working together in a modern classroom environment.", imageId: "gallery-1" },
+  { id: 2, title: "The Knowledge Hub", description: "Our extensive library, a quiet place for study and research.", imageId: "gallery-2" },
+  { id: 3, title: "Go Team!", description: "Action shot from a heated basketball game in our gymnasium.", imageId: "gallery-3" },
+  { id: 4, title: "Future Scientists", description: "Students engaged in a hands-on experiment in the science lab.", imageId: "gallery-4" },
+  { id: 5, title: "Our Campus", description: "The main school building on a bright, sunny day.", imageId: "gallery-5" },
+  { id: 6, title: "Drama Club Performance", description: "The cast of the school play taking a bow on stage.", imageId: "gallery-6" },
 ];

@@ -9,6 +9,7 @@ import {
   CalendarDays,
   Users,
   Info,
+  GalleryHorizontal,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -17,8 +18,8 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
   SheetClose,
+  SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { AccessibilityOptions } from "./accessibility-options";
@@ -27,6 +28,7 @@ const navLinks = [
   { href: "/", label: "Home", icon: Newspaper },
   { href: "/calendar", label: "Calendar", icon: CalendarDays },
   { href: "/staff", label: "Staff", icon: Users },
+  { href: "/gallery", label: "Gallery", icon: GalleryHorizontal },
   { href: "/about", label: "About Us", icon: Info },
 ];
 
@@ -104,15 +106,18 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="left">
                 <SheetHeader>
-                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                  <SheetClose asChild>
+                    <SheetTitle>
+                      <Link href="/" className="flex items-center gap-2">
+                        <School className="h-7 w-7 text-accent" />
+                        <span className="font-bold font-headline text-lg">
+                          CampusConnect
+                        </span>
+                      </Link>
+                    </SheetTitle>
+                  </SheetClose>
                 </SheetHeader>
                 <div className="p-4">
-                  <Link href="/" className="mb-8 flex items-center gap-2">
-                    <School className="h-7 w-7 text-accent" />
-                    <span className="font-bold font-headline text-lg">
-                      CampusConnect
-                    </span>
-                  </Link>
                   <nav className="flex flex-col gap-3">
                     {navLinks.map((link) => (
                       <NavLink key={link.href} {...link} isMobile />

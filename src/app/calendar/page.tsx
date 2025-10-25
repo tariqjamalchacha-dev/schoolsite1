@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { schoolEvents } from "@/lib/placeholder-data";
+import { cn } from "@/lib/utils";
 
 const categoryColors: { [key: string]: string } = {
   Holiday: "bg-red-500/80",
@@ -71,7 +72,7 @@ export default function CalendarPage() {
                     <div className="flex items-center text-muted-foreground text-sm space-x-4">
                       <div className="flex items-center gap-1.5">
                         <Clock className="w-4 h-4" />
-                        <span>{format(event.date, "p")}</span>
+                        <span>{format(new Date(event.date), "p")}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <MapPin className="w-4 h-4" />

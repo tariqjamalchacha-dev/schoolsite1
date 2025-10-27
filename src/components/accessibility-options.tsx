@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Check, Cog, Text } from "lucide-react";
+import { Check, Settings, Text } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -28,7 +28,7 @@ export function AccessibilityOptions() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <Cog className="h-5 w-5" />
+          <Settings className="h-5 w-5" />
           <span className="sr-only">Accessibility Settings</span>
         </Button>
       </DropdownMenuTrigger>

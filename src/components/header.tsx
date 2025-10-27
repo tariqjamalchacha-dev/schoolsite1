@@ -10,7 +10,7 @@ import {
   Users,
   Info,
   GalleryHorizontal,
-  Text,
+  Settings,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -107,17 +107,16 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="left">
                 <SheetHeader>
-                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                  <SheetClose asChild>
-                    <SheetTitle>
+                  <SheetTitle>
+                    <SheetClose asChild>
                       <Link href="/" className="flex items-center gap-2">
                         <School className="h-7 w-7 text-accent" />
                         <span className="font-bold font-headline text-lg">
                           APSIS Hyd
                         </span>
                       </Link>
-                    </SheetTitle>
-                  </SheetClose>
+                    </SheetClose>
+                  </SheetTitle>
                 </SheetHeader>
                 <div className="p-4">
                   <nav className="flex flex-col gap-3">

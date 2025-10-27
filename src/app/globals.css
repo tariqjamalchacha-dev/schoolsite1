@@ -8,19 +8,19 @@ body {
 
 @layer base {
   :root {
-    --background: 96 70% 97%;
+    --background: 96 80% 98%;
     --foreground: 222.2 84% 4.9%;
     --card: 96 60% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 96 60% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 45 93% 57%;
+    --primary: 45 93% 62%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 45 85% 45%;
+    --accent: 45 85% 50%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;

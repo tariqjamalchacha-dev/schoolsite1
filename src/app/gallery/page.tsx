@@ -5,7 +5,7 @@ import { galleryItems } from '@/lib/placeholder-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const metadata: Metadata = {
-  title: 'Gallery | CampusConnect',
+  title: 'Gallery | APSIS Hyd',
 };
 
 export default function GalleryPage() {

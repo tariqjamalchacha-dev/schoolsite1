@@ -10,6 +10,7 @@ import {
   Users,
   Info,
   GalleryHorizontal,
+  Text,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -85,7 +86,7 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center gap-2">
           <School className="h-7 w-7 text-accent" />
-          <span className="font-bold font-headline text-lg">CampusConnect</span>
+          <span className="font-bold font-headline text-lg">APSIS Hyd</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-2">
@@ -106,12 +107,13 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="left">
                 <SheetHeader>
+                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                   <SheetClose asChild>
                     <SheetTitle>
                       <Link href="/" className="flex items-center gap-2">
                         <School className="h-7 w-7 text-accent" />
                         <span className="font-bold font-headline text-lg">
-                          CampusConnect
+                          APSIS Hyd
                         </span>
                       </Link>
                     </SheetTitle>

@@ -5,7 +5,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
-  title: 'CampusConnect',
+  title: 'APSIS Hyd',
   description: 'Your school information hub',
 };
 

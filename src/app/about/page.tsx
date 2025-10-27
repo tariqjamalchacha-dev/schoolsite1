@@ -3,7 +3,7 @@ import { Users, Target, BookOpen, Heart } from "lucide-react";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | CampusConnect',
+  title: 'About Us | APSIS Hyd',
 };
 
 export default function AboutPage() {

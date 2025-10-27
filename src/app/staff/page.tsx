@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Phone, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Staff Directory | CampusConnect',
+  title: 'Staff Directory | APSIS Hyd',
 };
 
 export default function StaffPage() {

@@ -61,8 +61,8 @@ export default function Home() {
                 )}
                 <div className="flex flex-col flex-grow p-6">
                   <CardHeader className="p-0">
-                    <CardTitle>{item.title}</CardTitle>
-                    <CardDescription>{item.category}</CardDescription>
+                    <CardTitle className="text-card-foreground">{item.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground">{item.category}</CardDescription>
                   </CardHeader>
                   <CardContent className="p-0 pt-4 flex-grow">
                     <p className="text-muted-foreground">{item.summary}</p>

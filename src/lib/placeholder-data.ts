@@ -5,6 +5,7 @@ export const newsItems = [
     summary: "Students showcased amazing projects at this year's science fair. See the list of winners and their innovative ideas.",
     category: "Academics",
     date: new Date(2024, 4, 15),
+    imageId: "news-1",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const newsItems = [
     summary: "A thrilling final match saw our basketball team clinch the state championship. Congratulations to the players and coaches!",
     category: "Sports",
     date: new Date(2024, 4, 12),
+    imageId: "news-2",
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const newsItems = [
     summary: "Conferences are scheduled for next month. Please sign up for a slot to discuss your child's progress.",
     category: "Announcements",
     date: new Date(2024, 4, 10),
+    imageId: "news-3",
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const newsItems = [
     summary: "The drama club's production was a fantastic showcase of talent. Thank you to everyone who came to support our students.",
     category: "Arts & Culture",
     date: new Date(2024, 4, 5),
+    imageId: "news-4",
   },
 ];
 
@@ -71,7 +75,7 @@ export const schoolEvents = [
     title: "Today's Soccer Match",
     description: "Varsity Soccer vs. Northwood High at 4:00 PM.",
     category: "Sports",
-  }
+  },
 ];
 
 export const staffMembers = [

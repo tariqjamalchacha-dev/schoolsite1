@@ -10,7 +10,6 @@ import {
   Users,
   Info,
   GalleryHorizontal,
-  Settings,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -83,19 +82,19 @@ const NavLink = ({
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="mr-6 flex items-center gap-2 pl-2">
           <School className="h-7 w-7 text-accent" />
           <span className="font-bold font-headline text-lg">APSIS Hyd</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-2">
+        <nav className="hidden md:flex flex-1 items-center justify-center gap-2">
           {navLinks.map((link) => (
             <NavLink key={link.href} {...link} />
           ))}
         </nav>
 
-        <div className="flex flex-1 items-center justify-end">
+        <div className="flex items-center">
           <AccessibilityOptions />
           <div className="md:hidden ml-2">
             <Sheet>

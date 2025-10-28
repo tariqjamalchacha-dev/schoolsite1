@@ -3,14 +3,14 @@ import { Users, Target, BookOpen, Heart } from "lucide-react";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | APSIS Hyd',
+  title: 'Contact Info | APSIS Hyd',
 };
 
 export default function AboutPage() {
   return (
     <div className="space-y-8">
       <header className="text-center">
-        <h1 className="text-4xl font-bold font-headline tracking-tight">About Our School</h1>
+        <h1 className="text-4xl font-bold font-headline tracking-tight">Contact Info</h1>
         <p className="mt-2 text-lg text-muted-foreground">Learn more about our community, values, and commitment to excellence.</p>
       </header>
 

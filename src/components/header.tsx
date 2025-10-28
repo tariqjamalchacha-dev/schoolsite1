@@ -10,6 +10,7 @@ import {
   Users,
   Info,
   GalleryHorizontal,
+  Phone,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -27,9 +28,9 @@ import { AccessibilityOptions } from "./accessibility-options";
 const navLinks = [
   { href: "/", label: "Home", icon: Newspaper },
   { href: "/calendar", label: "Calendar", icon: CalendarDays },
-  { href: "/staff", label: "Staff", icon: Users },
-  { href: "/gallery", label: "Gallery", icon: GalleryHorizontal },
-  { href: "/about", label: "About Us", icon: Info },
+  { href: "/staff", label: "Faculty", icon: Users },
+  { href: "/gallery", label: "Event Gallery", icon: GalleryHorizontal },
+  { href: "/about", label: "Contact Info", icon: Info },
 ];
 
 const NavLink = ({
@@ -51,7 +52,8 @@ const NavLink = ({
     {
       "text-primary-foreground bg-primary/20 hover:bg-primary/30":
         isActive && !isMobile,
-      "text-foreground hover:bg-accent/50 hover:text-accent-foreground": !isActive && !isMobile,
+      "text-foreground hover:bg-accent/50 hover:text-accent-foreground dark:hover:text-black":
+        !isActive && !isMobile,
       "text-foreground hover:bg-accent/80": isMobile,
       "bg-accent/90 text-accent-foreground": isActive && isMobile,
     },
@@ -82,7 +84,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-16 items-center px-4">
-        <div className="flex items-center pl-2 md:pl-0">
+        <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2">
             <School className="h-7 w-7 text-accent" />
             <span className="font-bold font-headline text-lg">APSIS Hyd</span>
@@ -95,40 +97,40 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex flex-1 items-center justify-end md:flex-initial">
+        <div className="flex items-center gap-2">
           <div className="flex items-center gap-2">
             <AccessibilityOptions />
-            <div className="md:hidden">
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <Menu className="h-5 w-5" />
-                    <span className="sr-only">Open menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="left">
-                  <SheetHeader>
-                    <SheetTitle>
-                      <SheetClose asChild>
-                        <Link href="/" className="flex items-center gap-2">
-                          <School className="h-7 w-7 text-accent" />
-                          <span className="font-bold font-headline text-lg">
-                            APSIS Hyd
-                          </span>
-                        </Link>
-                      </SheetClose>
-                    </SheetTitle>
-                  </SheetHeader>
-                  <div className="p-4">
-                    <nav className="flex flex-col gap-3">
-                      {navLinks.map((link) => (
-                        <NavLink key={link.href} {...link} isMobile />
-                      ))}
-                    </nav>
-                  </div>
-                </SheetContent>
-              </Sheet>
-            </div>
+          </div>
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left">
+                <SheetHeader>
+                  <SheetTitle>
+                    <SheetClose asChild>
+                      <Link href="/" className="flex items-center gap-2">
+                        <School className="h-7 w-7 text-accent" />
+                        <span className="font-bold font-headline text-lg">
+                          APSIS Hyd
+                        </span>
+                      </Link>
+                    </SheetClose>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="p-4">
+                  <nav className="flex flex-col gap-3">
+                    {navLinks.map((link) => (
+                      <NavLink key={link.href} {...link} isMobile />
+                    ))}
+                  </nav>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>

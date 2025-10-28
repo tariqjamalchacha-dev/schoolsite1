@@ -5,7 +5,7 @@ import { galleryItems } from '@/lib/placeholder-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const metadata: Metadata = {
-  title: 'Gallery | APSIS Hyd',
+  title: 'Event Gallery | APSIS Hyd',
 };
 
 export default function GalleryPage() {
@@ -16,7 +16,7 @@ export default function GalleryPage() {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="text-4xl font-bold font-headline tracking-tight">School Gallery</h1>
+        <h1 className="text-4xl font-bold font-headline tracking-tight">Event Gallery</h1>
         <p className="mt-2 text-lg text-muted-foreground">
           A glimpse into life at our school.
         </p>

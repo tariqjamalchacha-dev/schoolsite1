@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Phone, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Staff Directory | APSIS Hyd',
+  title: 'Faculty | APSIS Hyd',
 };
 
 export default function StaffPage() {
@@ -18,7 +18,7 @@ export default function StaffPage() {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="text-4xl font-bold font-headline tracking-tight">Staff Directory</h1>
+        <h1 className="text-4xl font-bold font-headline tracking-tight">Faculty Directory</h1>
         <p className="mt-2 text-lg text-muted-foreground">
           Meet the dedicated teachers and staff of our school.
         </p>

@@ -21,7 +21,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-foreground">
             Welcome to APSIS Hyd
           </h1>
-          <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-foreground max-w-2xl mx-auto">
             Your all-in-one portal for school news, events, and information. Stay connected with our community.
           </p>
           <div className="mt-8 flex justify-center gap-4">
@@ -40,7 +40,7 @@ export default function Home() {
       <section>
         <h2 className="text-3xl font-bold font-headline mb-6 flex items-center gap-3">
           <Newspaper className="w-8 h-8 text-accent" />
-          Latest News & Announcements
+          Events
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {newsItems.map((item) => {

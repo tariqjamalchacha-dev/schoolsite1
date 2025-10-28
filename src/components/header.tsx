@@ -83,11 +83,13 @@ const NavLink = ({
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
-        <Link href="/" className="flex items-center gap-2 pl-2 mr-6">
-          <School className="h-7 w-7 text-accent" />
-          <span className="font-bold font-headline text-lg">APSIS Hyd</span>
-        </Link>
+      <div className="flex h-16 items-center px-4">
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center gap-2 pl-2">
+            <School className="h-7 w-7 text-accent" />
+            <span className="font-bold font-headline text-lg">APSIS Hyd</span>
+          </Link>
+        </div>
 
         <nav className="hidden md:flex flex-1 items-center justify-center gap-4">
           {navLinks.map((link) => (
@@ -95,7 +97,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex flex-1 items-center justify-end">
+        <div className="flex items-center justify-end">
           <AccessibilityOptions />
           <div className="md:hidden ml-2">
             <Sheet>

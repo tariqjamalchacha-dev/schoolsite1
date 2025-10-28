@@ -97,9 +97,11 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center justify-end">
-          <AccessibilityOptions />
-          <div className="md:hidden ml-2">
+        <div className="flex flex-1 items-center justify-end gap-2">
+          <div className="hidden md:block">
+            <AccessibilityOptions />
+          </div>
+          <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon">

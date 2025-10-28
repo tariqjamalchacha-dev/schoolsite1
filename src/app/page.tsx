@@ -43,7 +43,7 @@ export default function Home() {
           Events
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {newsItems.map((item) => {
+          {newsItems.slice(0, 3).map((item) => {
             const newsImage = getImage(item.imageId);
             return (
               <Card key={item.id} className="flex flex-col hover:shadow-lg transition-shadow duration-300 overflow-hidden">

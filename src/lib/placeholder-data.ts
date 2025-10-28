@@ -23,14 +23,6 @@ export const newsItems = [
     date: new Date(2024, 4, 10),
     imageId: "news-3",
   },
-  {
-    id: 4,
-    title: "School Play 'A Midsummer Night's Dream' a Huge Success",
-    summary: "The drama club's production was a fantastic showcase of talent. Thank you to everyone who came to support our students.",
-    category: "Arts & Culture",
-    date: new Date(2024, 4, 5),
-    imageId: "news-4",
-  },
 ];
 
 export const schoolEvents = [

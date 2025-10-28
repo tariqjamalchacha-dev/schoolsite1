@@ -96,11 +96,9 @@ export default function Header() {
             <NavLink key={link.href} {...link} />
           ))}
         </nav>
-
+        
         <div className="flex flex-1 items-center justify-end gap-2">
-          <div className="hidden md:block">
             <AccessibilityOptions />
-          </div>
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>

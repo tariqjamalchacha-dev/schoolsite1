@@ -1,3 +1,4 @@
+
 export const newsItems = [
   {
     id: 1,
@@ -24,6 +25,34 @@ export const newsItems = [
     imageId: "news-3",
   },
 ];
+
+export const announcementItems = [
+  {
+    id: 1,
+    title: "Library Books Due",
+    content: "All library books must be returned by the end of the week to prepare for the summer reading program.",
+    date: new Date(2024, 4, 17),
+  },
+  {
+    id: 2,
+    title: "Yearbook Distribution",
+    content: "Yearbooks will be distributed to students in the main hall during lunch periods on Wednesday.",
+    date: new Date(2024, 4, 21),
+  },
+  {
+    id: 3,
+    title: "Lost and Found",
+    content: "Please check the lost and found box in the main office for any missing items before the end of the school year.",
+    date: new Date(2024, 4, 23),
+  },
+  {
+    id: 4,
+    title: "Summer Office Hours",
+    content: "The school's main office will operate on a reduced schedule from 9 AM to 2 PM during the summer break.",
+    date: new Date(2024, 4, 28),
+  },
+];
+
 
 export const schoolEvents = [
   {

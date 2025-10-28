@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { newsItems } from '@/lib/placeholder-data';
+import { newsItems, announcementItems } from '@/lib/placeholder-data';
 import Link from 'next/link';
-import { ArrowRight, Newspaper } from 'lucide-react';
+import { ArrowRight, Newspaper, Megaphone } from 'lucide-react';
 import { format } from 'date-fns';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -74,6 +74,30 @@ export default function Home() {
               </Card>
             );
           })}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-3xl font-bold font-headline mb-6 flex items-center gap-3">
+          <Megaphone className="w-8 h-8 text-accent" />
+          Announcements
+        </h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {announcementItems.map((item) => (
+            <Card key={item.id} className="flex flex-col hover:shadow-lg transition-shadow duration-300">
+              <div className="flex flex-col flex-grow p-6">
+                <CardHeader className="p-0">
+                  <CardTitle className="text-card-foreground">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 pt-4 flex-grow">
+                  <p className="text-muted-foreground">{item.content}</p>
+                </CardContent>
+                <CardFooter className="p-0 pt-4 text-sm text-muted-foreground">
+                  <p>{format(item.date, 'MMMM d, yyyy')}</p>
+                </CardFooter>
+              </div>
+            </Card>
+          ))}
         </div>
       </section>
     </div>

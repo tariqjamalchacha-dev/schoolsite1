@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="space-y-12">
       <section className="relative text-center bg-primary/20 p-12 rounded-lg overflow-hidden">
-        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,0.5))]"></div>
+        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,0.5))]"></div>
         <div className="relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary-foreground tracking-tight">
             Welcome to APSIS Hyd

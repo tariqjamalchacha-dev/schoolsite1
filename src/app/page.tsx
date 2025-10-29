@@ -13,15 +13,17 @@ export default function Home() {
     return PlaceHolderImages.find(img => img.id === imageId);
   }
 
+  const sortedAnnouncements = [...announcementItems].sort((a, b) => b.date.getTime() - a.date.getTime());
+
   return (
     <div className="space-y-12">
       <section className="relative text-center bg-primary/20 p-12 rounded-lg overflow-hidden">
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,0.5))]"></div>
         <div className="relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-foreground">
+          <h1 className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-foreground dark:text-gray-100">
             Welcome to APSIS Hyd
           </h1>
-          <p className="mt-4 text-lg text-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-foreground max-w-2xl mx-auto dark:text-gray-300">
             Your all-in-one portal for school news, events, and information. Stay connected with our community.
           </p>
           <div className="mt-8 flex justify-center gap-4">
@@ -31,7 +33,7 @@ export default function Home() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <Link href="/about">About Us</Link>
+              <Link href="/about">Contact Info</Link>
             </Button>
           </div>
         </div>
@@ -43,18 +45,18 @@ export default function Home() {
           Announcements
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
-          {announcementItems.map((item) => (
+          {sortedAnnouncements.map((item) => (
             <Card key={item.id} className="flex flex-col hover:shadow-lg transition-shadow duration-300">
-              <div className="flex flex-col flex-grow p-6">
-                <CardHeader className="p-0">
+              <div className="relative flex flex-col flex-grow p-6">
+                <CardHeader className="p-0 pr-24">
                   <CardTitle className="text-card-foreground">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0 pt-4 flex-grow">
                   <p className="text-muted-foreground">{item.content}</p>
                 </CardContent>
-                <CardFooter className="p-0 pt-4 text-sm text-muted-foreground">
-                  <p>{format(item.date, 'MMMM d, yyyy')}</p>
-                </CardFooter>
+                <div className="absolute top-6 right-6 text-sm text-muted-foreground">
+                  {format(item.date, 'MMMM d, yyyy')}
+                </div>
               </div>
             </Card>
           ))}

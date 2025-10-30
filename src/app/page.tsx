@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative h-96 w-full">
+      <section className="relative h-96 w-full flex items-center justify-center">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -29,6 +29,14 @@ export default function Home() {
             priority
           />
         )}
+        <div className="relative z-10 flex gap-4">
+            <Button asChild size="lg">
+                <Link href="/calendar">View Calendar</Link>
+            </Button>
+            <Button asChild variant="secondary" size="lg">
+                <Link href="/about">Contact Us</Link>
+            </Button>
+        </div>
       </section>
 
       <div className="container mx-auto px-4 py-8 space-y-12">

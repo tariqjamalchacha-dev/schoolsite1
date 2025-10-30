@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { format, isSameDay } from "date-fns";
-import { Calendar as CalendarIcon, MapPin, Clock, GripVertical } from "lucide-react";
+import { Calendar as CalendarIcon, MapPin, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -37,8 +37,8 @@ export default function CalendarPage() {
           Stay up-to-date with all school events, holidays, and important dates.
         </p>
       </header>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <Card className="lg:col-span-1 flex justify-center items-start">
+      <div className="grid md:grid-cols-2 gap-8">
+        <Card className="flex justify-center items-start">
           <Calendar
             mode="single"
             selected={date}
@@ -55,7 +55,7 @@ export default function CalendarPage() {
             }}
           />
         </Card>
-        <div className="lg:col-span-1">
+        <div>
           <h2 className="text-2xl font-semibold mb-4 font-headline">
             Events for: {date ? format(date, "MMMM d, yyyy") : "No date selected"}
           </h2>
@@ -100,34 +100,34 @@ export default function CalendarPage() {
             </div>
           </ScrollArea>
         </div>
-        <div className="lg:col-span-1">
-          <h2 className="text-2xl font-semibold mb-4 font-headline">All Events</h2>
-          <ScrollArea className="h-[500px] pr-4">
-            <div className="space-y-4">
-              {allSortedEvents.map((event) => (
-                <Card key={`all-${event.id}`} className="transition-shadow hover:shadow-md">
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <CardTitle>{event.title}</CardTitle>
-                      <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
-                        {event.category}
-                      </Badge>
+      </div>
+      <div>
+        <h2 className="text-2xl font-semibold mb-4 font-headline">All Events</h2>
+        <ScrollArea className="h-[500px] pr-4">
+          <div className="space-y-4">
+            {allSortedEvents.map((event) => (
+              <Card key={`all-${event.id}`} className="transition-shadow hover:shadow-md">
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <CardTitle>{event.title}</CardTitle>
+                    <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
+                      {event.category}
+                    </Badge>
+                  </div>
+                   <CardDescription>{format(new Date(event.date), "MMMM d, yyyy 'at' p")}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center text-muted-foreground text-sm space-x-4">
+                    <div className="flex items-center gap-1.5">
+                      <MapPin className="w-4 h-4" />
+                      <span>{event.description}</span>
                     </div>
-                     <CardDescription>{format(new Date(event.date), "MMMM d, yyyy 'at' p")}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center text-muted-foreground text-sm space-x-4">
-                      <div className="flex items-center gap-1.5">
-                        <MapPin className="w-4 h-4" />
-                        <span>{event.description}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </ScrollArea>
-        </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </ScrollArea>
       </div>
     </div>
   );

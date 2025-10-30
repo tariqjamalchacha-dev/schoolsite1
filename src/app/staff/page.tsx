@@ -26,11 +26,21 @@ export default function StaffPage() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {staffMembers.map((staff) => {
           const staffImage = getImage(staff.imageId);
+          const isLocal = staffImage?.imageUrl.startsWith('/');
           return (
             <Card key={staff.id} className="hover:shadow-lg transition-shadow">
               <CardHeader className="flex flex-row items-center gap-4">
                 <Avatar className="h-20 w-20">
-                  {staffImage && (
+                  {staffImage && isLocal && (
+                     <Image 
+                      src={staffImage.imageUrl} 
+                      alt={`Portrait of ${staff.name}`} 
+                      width={80}
+                      height={80}
+                      className="rounded-full"
+                    />
+                  )}
+                  {staffImage && !isLocal &&(
                     <AvatarImage 
                       src={staffImage.imageUrl} 
                       alt={`Portrait of ${staff.name}`} 

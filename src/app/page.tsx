@@ -14,29 +14,21 @@ export default function Home() {
   }
 
   const sortedAnnouncements = [...announcementItems].sort((a, b) => b.date.getTime() - a.date.getTime());
+  const heroImage = getImage('hero-building');
 
   return (
     <div className="space-y-12">
-      <section className="relative text-center bg-primary/20 p-12 rounded-lg overflow-hidden">
-        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,0.5))]"></div>
-        <div className="relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-foreground dark:text-gray-100">
-            Welcome to APSIS Hyd
-          </h1>
-          <p className="mt-4 text-lg text-foreground max-w-2xl mx-auto dark:text-gray-300">
-            Your all-in-one portal for school news, events, and information. Stay connected with our community.
-          </p>
-          <div className="mt-8 flex justify-center gap-4">
-            <Button asChild size="lg">
-              <Link href="/calendar">
-                View Calendar <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/about">Contact Info</Link>
-            </Button>
-          </div>
-        </div>
+      <section className="relative -mx-4 -mt-8 h-96">
+        {heroImage && (
+          <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            fill
+            className="object-cover opacity-50"
+            data-ai-hint={heroImage.imageHint}
+            priority
+          />
+        )}
       </section>
 
       <section>

@@ -41,12 +41,12 @@ export default function CalendarPage() {
 
   const eventDays = schoolEvents.map(event => new Date(event.date));
 
-  const EventCard = ({ event, key }: { event: (typeof schoolEvents)[0], key: string }) => {
+  const EventCard = ({ event }: { event: (typeof schoolEvents)[0] }) => {
     const eventDate = new Date(event.date);
     const isEventPast = isPast(eventDate) && !isToday(eventDate);
     const isEventToday = isToday(eventDate);
     return (
-       <Card key={key} className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
+       <Card className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
         <CardHeader>
           <div className="flex justify-between items-start">
             <CardTitle>{event.title}</CardTitle>

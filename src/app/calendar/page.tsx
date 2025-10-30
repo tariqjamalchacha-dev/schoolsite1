@@ -70,7 +70,7 @@ export default function CalendarPage() {
                         <div className="flex justify-between items-start">
                           <CardTitle>{event.title}</CardTitle>
                           <div className="flex items-center gap-2">
-                            {isEventPast && <Badge variant="outline">Completed</Badge>}
+                            {isEventPast && <Badge variant="secondary">Completed</Badge>}
                             <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
                               {event.category}
                             </Badge>
@@ -119,7 +119,7 @@ export default function CalendarPage() {
                     <div className="flex justify-between items-start">
                       <CardTitle>{event.title}</CardTitle>
                       <div className="flex items-center gap-2">
-                        {isEventPast && <Badge variant="outline">Completed</Badge>}
+                        {isEventPast && <Badge variant="secondary">Completed</Badge>}
                         <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
                           {event.category}
                         </Badge>

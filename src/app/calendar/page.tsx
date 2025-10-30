@@ -30,7 +30,7 @@ export default function CalendarPage() {
     (event) => date && isSameDay(new Date(event.date), date)
   );
   
-  const allSortedEvents = [...schoolEvents].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  const allSortedEvents = [...schoolEvents].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const eventDays = schoolEvents.map(event => new Date(event.date));
 
@@ -69,10 +69,10 @@ export default function CalendarPage() {
               {eventsOnSelectedDate.length > 0 ? (
                 eventsOnSelectedDate.map((event) => {
                   const eventDate = new Date(event.date);
-                  const isEventPast = isPast(eventDate);
+                  const isEventPast = isPast(eventDate) && !isToday(eventDate);
                   const isEventToday = isToday(eventDate);
                   return (
-                    <Card key={event.id} className={cn("transition-shadow hover:shadow-md", isEventPast && !isEventToday && "opacity-60")}>
+                    <Card key={event.id} className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <CardTitle>{event.title}</CardTitle>
@@ -126,10 +126,10 @@ export default function CalendarPage() {
           <div className="space-y-4">
             {allSortedEvents.map((event) => {
               const eventDate = new Date(event.date);
-              const isEventPast = isPast(eventDate);
+              const isEventPast = isPast(eventDate) && !isToday(eventDate);
               const isEventToday = isToday(eventDate);
               return (
-                <Card key={`all-${event.id}`} className={cn("transition-shadow hover:shadow-md", isEventPast && !isEventToday && "opacity-60")}>
+                <Card key={`all-${event.id}`} className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <CardTitle>{event.title}</CardTitle>

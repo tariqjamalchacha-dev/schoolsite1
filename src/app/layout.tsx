@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import MainLayout from '@/components/main-layout';
 
 export const metadata: Metadata = {
   title: 'APSIS Hyd',
@@ -23,9 +24,9 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <MainLayout>
           {children}
-        </main>
+        </MainLayout>
         <Footer />
         <Toaster />
       </body>

@@ -14,7 +14,7 @@ export default function GalleryPage() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="container mx-auto px-4 py-8 space-y-8">
       <header>
         <h1 className="text-4xl font-bold font-headline tracking-tight">Event Gallery</h1>
         <p className="mt-2 text-lg text-muted-foreground">

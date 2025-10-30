@@ -27,10 +27,14 @@ import { AccessibilityOptions } from "./accessibility-options";
 
 const navLinks = [
   { href: "/", label: "Home", icon: Newspaper },
-  { href: "/calendar", label: "Calendar", icon: CalendarDays },
   { href: "/staff", label: "Faculty", icon: Users },
   { href: "/gallery", label: "Event Gallery", icon: GalleryHorizontal },
+  { href: "/calendar", label: "Calendar", icon: CalendarDays },
   { href: "/about", label: "Contact Info", icon: Info },
+];
+
+const mobileNavLinks = [
+  ...navLinks,
 ];
 
 const NavLink = ({
@@ -83,7 +87,7 @@ const NavLink = ({
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-16 items-center px-4">
+      <div className="container mx-auto flex h-16 items-center px-4">
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2">
             <School className="h-7 w-7 text-accent" />
@@ -96,11 +100,9 @@ export default function Header() {
             <NavLink key={link.href} {...link} />
           ))}
         </nav>
-
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-2">
-            <AccessibilityOptions />
-          </div>
+        
+        <div className="flex flex-1 md:flex-initial justify-end items-center gap-2">
+          <AccessibilityOptions />
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -124,7 +126,7 @@ export default function Header() {
                 </SheetHeader>
                 <div className="p-4">
                   <nav className="flex flex-col gap-3">
-                    {navLinks.map((link) => (
+                    {mobileNavLinks.map((link) => (
                       <NavLink key={link.href} {...link} isMobile />
                     ))}
                   </nav>

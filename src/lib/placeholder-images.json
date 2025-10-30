@@ -3,7 +3,7 @@
     {
       "id": "staff-1",
       "description": "Portrait of Principal Thompson",
-      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTI1ODc2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTI1ODc2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman portrait"
     },
     {
@@ -93,7 +93,7 @@
     {
       "id": "hero-building",
       "description": "A modern school building",
-      "imageUrl": "/images/school-building.jpg",
+      "imageUrl": "https://storage.googleapis.com/stedi-assets/plugins/firebase-studio/school-building.jpg",
       "imageHint": "school building"
     }
   ]

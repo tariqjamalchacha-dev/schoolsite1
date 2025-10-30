@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { format, isSameDay, isPast } from "date-fns";
 import { Calendar as CalendarIcon, MapPin, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +20,11 @@ const categoryColors: { [key: string]: string } = {
 
 export default function CalendarPage() {
   const [date, setDate] = useState<Date | undefined>(new Date());
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const eventsOnSelectedDate = schoolEvents.filter(
     (event) => date && isSameDay(new Date(event.date), date)
@@ -85,7 +90,7 @@ export default function CalendarPage() {
                         <div className="flex items-center text-muted-foreground text-sm space-x-4">
                           <div className="flex items-center gap-1.5">
                             <Clock className="w-4 h-4" />
-                            <span>{format(new Date(event.date), "p")}</span>
+                            {isClient ? <span>{format(new Date(event.date), "p")}</span> : <span></span>}
                           </div>
                           <div className="flex items-center gap-1.5">
                             <MapPin className="w-4 h-4" />
@@ -133,7 +138,7 @@ export default function CalendarPage() {
                         </Badge>
                       </div>
                     </div>
-                     <CardDescription>{format(new Date(event.date), "MMMM d, yyyy 'at' p")}</CardDescription>
+                     <CardDescription>{isClient ? format(new Date(event.date), "MMMM d, yyyy 'at' p") : format(new Date(event.date), "MMMM d, yyyy")}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-center text-muted-foreground text-sm space-x-4">

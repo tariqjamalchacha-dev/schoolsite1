@@ -8,6 +8,9 @@ import MainLayout from '@/components/main-layout';
 export const metadata: Metadata = {
   title: 'APSIS Hyd',
   description: 'Your school information hub',
+  icons: {
+    icon: '/images/logo-svg.svg',
+  },
 };
 
 export default function RootLayout({

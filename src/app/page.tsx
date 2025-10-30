@@ -29,7 +29,7 @@ export default function Home() {
             priority
           />
         )}
-        <div className="relative z-10 flex gap-16">
+        <div className="relative z-10 flex gap-32">
             <Button asChild size="lg">
                 <Link href="/calendar">View Calendar</Link>
             </Button>

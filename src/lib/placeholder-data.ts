@@ -97,6 +97,24 @@ export const schoolEvents = [
     description: "Varsity Soccer vs. Northwood High at 4:00 PM.",
     category: "Sports",
   },
+  {
+    id: 7,
+    date: new Date(),
+    title: "Today's Event",
+    description: "This is an event happening today.",
+    category: "Academics",
+  },
+  {
+    id: 8,
+    date: (() => {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      return tomorrow;
+    })(),
+    title: "Future Event",
+    description: "This is an event happening tomorrow.",
+    category: "Social Event",
+  },
 ];
 
 export const staffMembers = [

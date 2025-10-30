@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative h-96 w-full flex items-center justify-center">
+      <section className="relative h-96 w-full flex items-end justify-center pb-12">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { format, isSameDay } from "date-fns";
+import { format, isSameDay, isPast } from "date-fns";
 import { Calendar as CalendarIcon, MapPin, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Calendar } from "@/components/ui/calendar";
@@ -62,30 +62,36 @@ export default function CalendarPage() {
           <ScrollArea className="h-[500px] pr-4">
             <div className="space-y-4">
               {eventsOnSelectedDate.length > 0 ? (
-                eventsOnSelectedDate.map((event) => (
-                  <Card key={event.id} className="transition-shadow hover:shadow-md">
-                    <CardHeader>
-                      <div className="flex justify-between items-start">
-                        <CardTitle>{event.title}</CardTitle>
-                        <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
-                          {event.category}
-                        </Badge>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center text-muted-foreground text-sm space-x-4">
-                        <div className="flex items-center gap-1.5">
-                          <Clock className="w-4 h-4" />
-                          <span>{format(new Date(event.date), "p")}</span>
+                eventsOnSelectedDate.map((event) => {
+                  const isEventPast = isPast(new Date(event.date));
+                  return (
+                    <Card key={event.id} className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
+                      <CardHeader>
+                        <div className="flex justify-between items-start">
+                          <CardTitle>{event.title}</CardTitle>
+                          <div className="flex items-center gap-2">
+                            {isEventPast && <Badge variant="outline">Completed</Badge>}
+                            <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
+                              {event.category}
+                            </Badge>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1.5">
-                          <MapPin className="w-4 h-4" />
-                          <span>{event.description}</span>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex items-center text-muted-foreground text-sm space-x-4">
+                          <div className="flex items-center gap-1.5">
+                            <Clock className="w-4 h-4" />
+                            <span>{format(new Date(event.date), "p")}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <MapPin className="w-4 h-4" />
+                            <span>{event.description}</span>
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))
+                      </CardContent>
+                    </Card>
+                  );
+                })
               ) : (
                 <Card className="text-center">
                   <CardContent className="p-8">
@@ -105,27 +111,33 @@ export default function CalendarPage() {
         <h2 className="text-2xl font-semibold mb-4 font-headline">All Events</h2>
         <ScrollArea className="h-[500px] pr-4">
           <div className="space-y-4">
-            {allSortedEvents.map((event) => (
-              <Card key={`all-${event.id}`} className="transition-shadow hover:shadow-md">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <CardTitle>{event.title}</CardTitle>
-                    <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
-                      {event.category}
-                    </Badge>
-                  </div>
-                   <CardDescription>{format(new Date(event.date), "MMMM d, yyyy 'at' p")}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center text-muted-foreground text-sm space-x-4">
-                    <div className="flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4" />
-                      <span>{event.description}</span>
+            {allSortedEvents.map((event) => {
+              const isEventPast = isPast(new Date(event.date));
+              return (
+                <Card key={`all-${event.id}`} className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <CardTitle>{event.title}</CardTitle>
+                      <div className="flex items-center gap-2">
+                        {isEventPast && <Badge variant="outline">Completed</Badge>}
+                        <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
+                          {event.category}
+                        </Badge>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                     <CardDescription>{format(new Date(event.date), "MMMM d, yyyy 'at' p")}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center text-muted-foreground text-sm space-x-4">
+                      <div className="flex items-center gap-1.5">
+                        <MapPin className="w-4 h-4" />
+                        <span>{event.description}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </ScrollArea>
       </div>

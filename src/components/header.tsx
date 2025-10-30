@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from 'next/image';
 import {
   School,
   Menu,
@@ -90,7 +91,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center px-4">
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2">
-            <School className="h-7 w-7 text-accent" />
+            <Image src="/images/logo-svg.svg" alt="APSIS Hyd Logo" width={28} height={28} />
             <span className="font-bold font-headline text-lg">APSIS Hyd</span>
           </Link>
         </div>
@@ -116,7 +117,7 @@ export default function Header() {
                   <SheetTitle>
                     <SheetClose asChild>
                       <Link href="/" className="flex items-center gap-2">
-                        <School className="h-7 w-7 text-accent" />
+                        <Image src="/images/logo-svg.svg" alt="APSIS Hyd Logo" width={28} height={28} />
                         <span className="font-bold font-headline text-lg">
                           APSIS Hyd
                         </span>

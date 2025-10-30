@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { format, isSameDay, isPast } from "date-fns";
+import { format, isSameDay, isPast, isToday } from "date-fns";
 import { Calendar as CalendarIcon, MapPin, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Calendar } from "@/components/ui/calendar";
@@ -68,14 +68,18 @@ export default function CalendarPage() {
             <div className="space-y-4">
               {eventsOnSelectedDate.length > 0 ? (
                 eventsOnSelectedDate.map((event) => {
-                  const isEventPast = isPast(new Date(event.date));
+                  const eventDate = new Date(event.date);
+                  const isEventPast = isPast(eventDate);
+                  const isEventToday = isToday(eventDate);
                   return (
-                    <Card key={event.id} className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
+                    <Card key={event.id} className={cn("transition-shadow hover:shadow-md", isEventPast && !isEventToday && "opacity-60")}>
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <CardTitle>{event.title}</CardTitle>
                           <div className="flex items-center gap-2">
-                            {isEventPast ? (
+                             {isEventToday ? (
+                              <Badge className="bg-blue-600 text-white">Today</Badge>
+                            ) : isEventPast ? (
                               <Badge className="bg-gray-500 text-white">Completed</Badge>
                             ) : (
                               <Badge className="bg-green-500 text-white">Upcoming</Badge>
@@ -90,7 +94,7 @@ export default function CalendarPage() {
                         <div className="flex items-center text-muted-foreground text-sm space-x-4">
                           <div className="flex items-center gap-1.5">
                             <Clock className="w-4 h-4" />
-                            {isClient ? <span>{format(new Date(event.date), "p")}</span> : <span></span>}
+                            {isClient ? <span>{format(eventDate, "p")}</span> : <span></span>}
                           </div>
                           <div className="flex items-center gap-1.5">
                             <MapPin className="w-4 h-4" />
@@ -121,14 +125,18 @@ export default function CalendarPage() {
         <ScrollArea className="h-[500px] pr-4">
           <div className="space-y-4">
             {allSortedEvents.map((event) => {
-              const isEventPast = isPast(new Date(event.date));
+              const eventDate = new Date(event.date);
+              const isEventPast = isPast(eventDate);
+              const isEventToday = isToday(eventDate);
               return (
-                <Card key={`all-${event.id}`} className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
+                <Card key={`all-${event.id}`} className={cn("transition-shadow hover:shadow-md", isEventPast && !isEventToday && "opacity-60")}>
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <CardTitle>{event.title}</CardTitle>
                       <div className="flex items-center gap-2">
-                        {isEventPast ? (
+                        {isEventToday ? (
+                          <Badge className="bg-blue-600 text-white">Today</Badge>
+                        ) : isEventPast ? (
                           <Badge className="bg-gray-500 text-white">Completed</Badge>
                         ) : (
                           <Badge className="bg-green-500 text-white">Upcoming</Badge>
@@ -138,7 +146,7 @@ export default function CalendarPage() {
                         </Badge>
                       </div>
                     </div>
-                     <CardDescription>{isClient ? format(new Date(event.date), "MMMM d, yyyy 'at' p") : format(new Date(event.date), "MMMM d, yyyy")}</CardDescription>
+                     <CardDescription>{isClient ? format(eventDate, "MMMM d, yyyy 'at' p") : format(eventDate, "MMMM d, yyyy")}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-center text-muted-foreground text-sm space-x-4">

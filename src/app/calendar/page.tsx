@@ -30,9 +30,52 @@ export default function CalendarPage() {
     (event) => date && isSameDay(new Date(event.date), date)
   );
   
-  const allSortedEvents = [...schoolEvents].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const upcomingEvents = [...schoolEvents]
+    .filter(event => !isPast(new Date(event.date)) || isToday(new Date(event.date)))
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+  const completedEvents = [...schoolEvents]
+    .filter(event => isPast(new Date(event.date)) && !isToday(new Date(event.date)))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
 
   const eventDays = schoolEvents.map(event => new Date(event.date));
+
+  const EventCard = ({ event, key }: { event: (typeof schoolEvents)[0], key: string }) => {
+    const eventDate = new Date(event.date);
+    const isEventPast = isPast(eventDate) && !isToday(eventDate);
+    const isEventToday = isToday(eventDate);
+    return (
+       <Card key={key} className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <CardTitle>{event.title}</CardTitle>
+            <div className="flex items-center gap-2">
+              {isEventToday ? (
+                <Badge className="bg-blue-600 text-white">Today</Badge>
+              ) : isEventPast ? (
+                <Badge className="bg-gray-500 text-white">Completed</Badge>
+              ) : (
+                <Badge className="bg-green-500 text-white">Upcoming</Badge>
+              )}
+              <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
+                {event.category}
+              </Badge>
+            </div>
+          </div>
+           <CardDescription>{isClient ? format(eventDate, "MMMM d, yyyy 'at' p") : format(eventDate, "MMMM d, yyyy")}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center text-muted-foreground text-sm space-x-4">
+            <div className="flex items-center gap-1.5">
+              <MapPin className="w-4 h-4" />
+              <span>{event.description}</span>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
@@ -120,47 +163,27 @@ export default function CalendarPage() {
           </ScrollArea>
         </div>
       </div>
-      <div>
-        <h2 className="text-2xl font-semibold mb-4 font-headline">All Events</h2>
-        <ScrollArea className="h-[500px] pr-4">
-          <div className="space-y-4">
-            {allSortedEvents.map((event) => {
-              const eventDate = new Date(event.date);
-              const isEventPast = isPast(eventDate) && !isToday(eventDate);
-              const isEventToday = isToday(eventDate);
-              return (
-                <Card key={`all-${event.id}`} className={cn("transition-shadow hover:shadow-md", isEventPast && "opacity-60")}>
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <CardTitle>{event.title}</CardTitle>
-                      <div className="flex items-center gap-2">
-                        {isEventToday ? (
-                          <Badge className="bg-blue-600 text-white">Today</Badge>
-                        ) : isEventPast ? (
-                          <Badge className="bg-gray-500 text-white">Completed</Badge>
-                        ) : (
-                          <Badge className="bg-green-500 text-white">Upcoming</Badge>
-                        )}
-                        <Badge className={cn("text-white", categoryColors[event.category] || "bg-gray-500")}>
-                          {event.category}
-                        </Badge>
-                      </div>
-                    </div>
-                     <CardDescription>{isClient ? format(eventDate, "MMMM d, yyyy 'at' p") : format(eventDate, "MMMM d, yyyy")}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center text-muted-foreground text-sm space-x-4">
-                      <div className="flex items-center gap-1.5">
-                        <MapPin className="w-4 h-4" />
-                        <span>{event.description}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </ScrollArea>
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4 font-headline">Current & Upcoming Events</h2>
+          <ScrollArea className="h-[500px] pr-4">
+            <div className="space-y-4">
+              {upcomingEvents.map((event) => (
+                <EventCard event={event} key={`upcoming-${event.id}`} />
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
+        <div>
+          <h2 className="text-2xl font-semibold mb-4 font-headline">Completed Events</h2>
+          <ScrollArea className="h-[500px] pr-4">
+            <div className="space-y-4">
+              {completedEvents.map((event) => (
+                 <EventCard event={event} key={`completed-${event.id}`} />
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
       </div>
     </div>
   );

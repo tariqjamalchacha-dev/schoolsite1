@@ -53,7 +53,7 @@ export default function StaffPage() {
         </p>
       </header>
 
-      <div className="space-y-12">
+      <div className="space-y-6">
         {/* Principal Row */}
         <section>
           <div className="flex justify-center">

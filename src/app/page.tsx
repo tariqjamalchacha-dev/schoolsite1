@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import newsItems from '@/data/news.json';
+import galleryItems from '@/data/gallery.json';
 import announcementItems from '@/data/announcements.json';
 import Link from 'next/link';
 import { ArrowRight, Newspaper, Megaphone } from 'lucide-react';
@@ -15,6 +15,7 @@ export default function Home() {
   }
 
   const sortedAnnouncements = [...announcementItems].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const sortedGalleryItems = [...galleryItems].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   const heroImage = getImage('hero-building');
 
   return (
@@ -71,18 +72,18 @@ export default function Home() {
             Events
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {newsItems.slice(0, 3).map((item) => {
-              const newsImage = getImage(item.imageId);
+            {sortedGalleryItems.slice(0, 3).map((item) => {
+              const galleryImage = getImage(item.imageId);
               return (
                 <Card key={item.id} className="flex flex-col hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                  {newsImage && (
+                  {galleryImage && (
                     <div className="relative aspect-video">
                       <Image
-                        src={newsImage.imageUrl}
+                        src={galleryImage.imageUrl}
                         alt={item.title}
                         fill
                         className="object-cover"
-                        data-ai-hint={newsImage.imageHint}
+                        data-ai-hint={galleryImage.imageHint}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
@@ -93,7 +94,7 @@ export default function Home() {
                       <CardDescription className="text-muted-foreground">{item.category}</CardDescription>
                     </CardHeader>
                     <CardContent className="p-0 pt-4 flex-grow">
-                      <p className="text-muted-foreground">{item.summary}</p>
+                      <p className="text-muted-foreground">{item.description}</p>
                     </CardContent>
                     <CardFooter className="p-0 pt-4 text-sm text-muted-foreground">
                       <p>{format(new Date(item.date), 'MMMM d, yyyy')}</p>

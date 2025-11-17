@@ -73,24 +73,6 @@
       "imageHint": "school play"
     },
     {
-      "id": "news-1",
-      "description": "Students with science fair projects",
-      "imageUrl": "https://images.unsplash.com/photo-1576765608866-5b4384e5428a?q=80&w=1974&auto=format&fit=crop",
-      "imageHint": "science fair"
-    },
-    {
-      "id": "news-2",
-      "description": "Basketball team celebrating a win",
-      "imageUrl": "https://images.unsplash.com/photo-1521405921473-d381b5399587?q=80&w=2070&auto=format&fit=crop",
-      "imageHint": "basketball game"
-    },
-    {
-      "id": "news-3",
-      "description": "A teacher and parent talking",
-      "imageUrl": "https://images.unsplash.com/photo-1573167507387-6b4b98cb7c13?q=80&w=2069&auto=format&fit=crop",
-      "imageHint": "teacher meeting"
-    },
-    {
       "id": "hero-building",
       "description": "A modern school building",
       "imageUrl": "/images/building.png",

@@ -45,7 +45,7 @@ export default function StaffPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 space-y-8">
+    <div className="space-y-4 pt-8">
       <header>
         <h1 className="text-4xl font-bold font-headline tracking-tight">Faculty</h1>
         <p className="mt-2 text-lg text-muted-foreground">

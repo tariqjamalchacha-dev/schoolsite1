@@ -25,6 +25,14 @@
     "imageId": "staff-3"
   },
   {
+    "id": 6,
+    "name": "Coach Michael Miller",
+    "role": "Athletic Director",
+    "email": "m.miller@apsishyd.edu",
+    "phone": "(123) 456-7895",
+    "imageId": "staff-6"
+  },
+  {
     "id": 4,
     "name": "Mr. David Chen",
     "role": "English & Literature Teacher",
@@ -39,13 +47,5 @@
     "email": "s.williams@apsishyd.edu",
     "phone": "(123) 456-7894",
     "imageId": "staff-5"
-  },
-  {
-    "id": 6,
-    "name": "Coach Michael Miller",
-    "role": "Athletic Director & PE Teacher",
-    "email": "m.miller@apsishyd.edu",
-    "phone": "(123) 456-7895",
-    "imageId": "staff-6"
   }
 ]

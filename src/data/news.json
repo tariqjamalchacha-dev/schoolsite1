@@ -1,0 +1,27 @@
+
+[
+  {
+    "id": 1,
+    "title": "Annual Science Fair Winners Announced",
+    "summary": "Students showcased amazing projects at this year's science fair. See the list of winners and their innovative ideas.",
+    "category": "Academics",
+    "date": "2024-05-15T12:00:00.000Z",
+    "imageId": "news-1"
+  },
+  {
+    "id": 2,
+    "title": "Varsity Basketball Team Wins Championship",
+    "summary": "A thrilling final match saw our basketball team clinch the state championship. Congratulations to the players and coaches!",
+    "category": "Sports",
+    "date": "2024-05-12T12:00:00.000Z",
+    "imageId": "news-2"
+  },
+  {
+    "id": 3,
+    "title": "Upcoming Parent-Teacher Conferences",
+    "summary": "Conferences are scheduled for next month. Please sign up for a slot to discuss your child's progress.",
+    "category": "Announcements",
+    "date": "2024-05-10T12:00:00.000Z",
+    "imageId": "news-3"
+  }
+]

@@ -1,7 +1,8 @@
+
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { galleryItems } from '@/lib/placeholder-data';
+import galleryItems from '@/data/gallery.json';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const metadata: Metadata = {

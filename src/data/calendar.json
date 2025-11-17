@@ -1,0 +1,45 @@
+
+[
+  {
+    "id": 1,
+    "date": "2024-06-01T09:00:00",
+    "title": "Summer Break Begins",
+    "description": "School closed for summer vacation.",
+    "category": "Holiday"
+  },
+  {
+    "id": 2,
+    "date": "2024-05-27T09:00:00",
+    "title": "Memorial Day",
+    "description": "School closed in observance of Memorial Day.",
+    "category": "Holiday"
+  },
+  {
+    "id": 3,
+    "date": "2024-05-20T09:00:00",
+    "title": "Final Exams (Grades 9-11)",
+    "description": "Week-long final examinations for underclassmen.",
+    "category": "Academics"
+  },
+  {
+    "id": 4,
+    "date": "2024-05-24T19:00:00",
+    "title": "Senior Prom",
+    "description": "Annual Senior Prom at The Grand Ballroom.",
+    "category": "Social Event"
+  },
+  {
+    "id": 5,
+    "date": "2024-05-30T14:00:00",
+    "title": "Graduation Ceremony",
+    "description": "Class of 2024 Graduation Ceremony on the main field.",
+    "category": "Ceremony"
+  },
+  {
+    "id": 6,
+    "date": "2024-06-12T16:00:00",
+    "title": "Today's Soccer Match",
+    "description": "Varsity Soccer vs. Northwood High at 4:00 PM.",
+    "category": "Sports"
+  }
+]

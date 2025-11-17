@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { newsItems, announcementItems } from '@/lib/placeholder-data';
+import newsItems from '@/data/news.json';
+import announcementItems from '@/data/announcements.json';
 import Link from 'next/link';
 import { ArrowRight, Newspaper, Megaphone } from 'lucide-react';
 import { format } from 'date-fns';
@@ -13,7 +14,7 @@ export default function Home() {
     return PlaceHolderImages.find(img => img.id === imageId);
   }
 
-  const sortedAnnouncements = [...announcementItems].sort((a, b) => b.date.getTime() - a.date.getTime());
+  const sortedAnnouncements = [...announcementItems].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   const heroImage = getImage('hero-building');
 
   return (
@@ -56,7 +57,7 @@ export default function Home() {
                     <p className="text-muted-foreground">{item.content}</p>
                   </CardContent>
                   <div className="absolute top-6 right-6 text-sm text-muted-foreground">
-                    {format(item.date, 'MMMM d, yyyy')}
+                    {format(new Date(item.date), 'MMMM d, yyyy')}
                   </div>
                 </div>
               </Card>
@@ -95,7 +96,7 @@ export default function Home() {
                       <p className="text-muted-foreground">{item.summary}</p>
                     </CardContent>
                     <CardFooter className="p-0 pt-4 text-sm text-muted-foreground">
-                      <p>{format(item.date, 'MMMM d, yyyy')}</p>
+                      <p>{format(new Date(item.date), 'MMMM d, yyyy')}</p>
                     </CardFooter>
                   </div>
                 </Card>

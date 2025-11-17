@@ -1,6 +1,7 @@
+
 import Image from "next/image";
 import type { Metadata } from 'next';
-import { staffMembers } from "@/lib/placeholder-data";
+import staffMembers from "@/data/staff.json";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";

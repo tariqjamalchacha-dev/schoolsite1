@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -6,9 +7,37 @@ import { Calendar as CalendarIcon, MapPin, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { schoolEvents } from "@/lib/placeholder-data";
+import schoolEventsData from "@/data/calendar.json";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "@/components/ui/scroll-area";
+
+const schoolEvents = schoolEventsData.map(event => ({
+  ...event,
+  date: new Date(event.date)
+}));
+
+// Add dynamic events
+schoolEvents.push(
+  {
+    id: 7,
+    date: new Date(),
+    title: "Today's Event",
+    description: "This is an event happening today.",
+    category: "Academics",
+  },
+  {
+    id: 8,
+    date: (() => {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      return tomorrow;
+    })(),
+    title: "Future Event",
+    description: "This is an event happening tomorrow.",
+    category: "Social Event",
+  }
+);
+
 
 const categoryColors: { [key: string]: string } = {
   Holiday: "bg-red-500/80",

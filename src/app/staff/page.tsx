@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import type { Metadata } from 'next';
 import staffMembers from "@/data/staff.json";
@@ -15,6 +16,7 @@ export default function StaffPage() {
   }
 
   const principal = staffMembers.filter(m => m.roleCategory === 'Principal');
+  const sectionHeads = staffMembers.filter(m => m.roleCategory === 'Section Head');
   const adminStaff = staffMembers.filter(m => m.roleCategory === 'Administrative staff');
   const teachers = staffMembers.filter(m => m.roleCategory === 'Teacher');
 
@@ -45,7 +47,7 @@ export default function StaffPage() {
   };
 
   return (
-    <div className="space-y-4 pt-8">
+    <div className="space-y-4">
       <header>
         <h1 className="text-4xl font-bold font-headline tracking-tight">Faculty</h1>
         <p className="mt-2 text-lg text-muted-foreground">
@@ -59,6 +61,20 @@ export default function StaffPage() {
           <section>
             <div className="flex justify-center">
               {principal.map((staff) => (
+                <StaffCard staff={staff} key={staff.id} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        <Separator />
+
+        {/* Section Heads Row */}
+        {sectionHeads.length > 0 && (
+          <section>
+             <h2 className="text-2xl font-bold font-headline mb-6 text-center">Section Heads</h2>
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+              {sectionHeads.map((staff) => (
                 <StaffCard staff={staff} key={staff.id} />
               ))}
             </div>

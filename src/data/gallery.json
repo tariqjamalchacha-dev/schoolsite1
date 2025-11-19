@@ -1,8 +1,8 @@
 
 [
-  { "id": 1, "title": "Collaborative Learning", "description": "Students working together in a modern classroom environment.", "imageId": "gallery-1", "date": "2024-05-18T12:00:00.000Z", "category": "Academics", "facebookPostUrl": "#" },
-  { "id": 2, "title": "The Knowledge Hub", "description": "Our extensive library, a quiet place for study and research.", "imageId": "gallery-2", "date": "2024-05-17T12:00:00.000Z", "category": "Campus", "facebookPostUrl": "#" },
-  { "id": 3, "title": "Go Team!", "description": "Action shot from a heated basketball game in our gymnasium.", "imageId": "gallery-3", "date": "2024-05-16T12:00:00.000Z", "category": "Sports", "facebookPostUrl": "#" },
+  { "id": 1, "title": "Iqbal Day", "description": "Student Celebrate Iqbal Day.", "imageId": "gallery-1", "date": "2025-11-11", "category": "Academics", "facebookPostUrl": "https://www.facebook.com/share/p/17MBkh9NhF/" },
+  { "id": 2, "title": "Inter-House Parliamentary Debate Competition", "description": "Our school hosted an intellectually stimulating Inter-House Parliamentary Debate Competition centered on the resolution.", "imageId": "gallery-2", "date": "2025-11-11", "category": "Academics", "facebookPostUrl": "https://www.facebook.com/share/p/1LdrVQUaw9/" },
+  { "id": 3, "title": "A Spellbinding Math Adventure!", "description": " 🧙‍♂️✨ Our tiny tots are transforming into Math Wizards at preschool!.", "imageId": "gallery-3", "date": "2025-11-08", "category": "Academics", "facebookPostUrl": "https://www.facebook.com/share/p/1FoPou1qKZ/" },
   { "id": 4, "title": "Future Scientists", "description": "Students engaged in a hands-on experiment in the science lab.", "imageId": "gallery-4", "date": "2024-05-15T12:00:00.000Z", "category": "Academics", "facebookPostUrl": "#" },
   { "id": 5, "title": "Our Campus", "description": "The main school building on a bright, sunny day.", "imageId": "gallery-5", "date": "2024-05-14T12:00:00.000Z", "category": "Campus", "facebookPostUrl": "#" },
   { "id": 6, "title": "Drama Club Performance", "description": "The cast of the school play taking a bow on stage.", "imageId": "gallery-6", "date": "2024-05-13T12:00:00.000Z", "category": "Arts", "facebookPostUrl": "#" }

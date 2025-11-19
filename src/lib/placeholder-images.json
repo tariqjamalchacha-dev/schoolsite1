@@ -62,20 +62,20 @@
     },
     {
       "id": "gallery-1",
-      "description": "Students collaborating in a classroom",
-      "imageUrl": "https://images.unsplash.com/photo-1758270704524-596810e891b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdHVkZW50cyUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3NjEzNjg2MTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Iqbal Day",
+      "imageUrl": "/images/Iqbal_Day_11-11-25.jpg",
       "imageHint": "students classroom"
     },
     {
       "id": "gallery-2",
-      "description": "School library with shelves of books",
-      "imageUrl": "https://images.unsplash.com/photo-1536985576470-b7e4a0363a19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzY2hvb2wlMjBsaWJyYXJ5fGVufDB8fHx8MTc2MTI0MjgwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Debate",
+      "imageUrl": "/images/Debate_11-11-25.jpg",
       "imageHint": "school library"
     },
     {
       "id": "gallery-3",
-      "description": "Students playing basketball in the gym",
-      "imageUrl": "https://images.unsplash.com/photo-1710429026883-524947152fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50cyUyMGJhc2tldGJhbGx8ZW58MHx8fHwxNzYxMzY4NjIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "a spellbinding math adventure!",
+      "imageUrl": "/images/Spellbinding_8-11-25.jpg",
       "imageHint": "students basketball"
     },
     {

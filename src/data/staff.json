@@ -7,25 +7,28 @@
     "roleTitle": "School Principal",
     "email": "p.thompson@apsishyd.edu",
     "phone": "(123) 456-7890",
-    "imageId": "staff-1"
+    "imageId": "staff-1",
+    "active": 1
   },
   {
     "id": 2,
     "name": "Erum Memon",
     "roleCategory": "Section Head",
-    "roleTitle": "Section Head Senior & Middle Section",
+    "roleTitle": "Senior & Middle Section",
     "email": "r.davis@apsishyd.edu",
     "phone": "(123) 456-7891",
-    "imageId": "staff-2"
+    "imageId": "staff-2",
+    "active": 1
   },
   {
     "id": 3,
     "name": "Kulsoom Ashfaq",
     "roleCategory": "Section Head",
-    "roleTitle": "Section Head Early Years & Junior Section",
+    "roleTitle": "Early Years & Junior",
     "email": "m.garcia@apsishyd.edu",
     "phone": "(123) 456-7892",
-    "imageId": "staff-3"
+    "imageId": "staff-3",
+    "active": 1
   },
   {
     "id": 6,
@@ -34,7 +37,8 @@
     "roleTitle": "Athletic Director",
     "email": "m.miller@apsishyd.edu",
     "phone": "(123) 456-7895",
-    "imageId": "staff-6"
+    "imageId": "staff-6",
+    "active": 1
   },
   {
     "id": 4,
@@ -43,7 +47,8 @@
     "roleTitle": "English & Literature Teacher",
     "email": "d.chen@apsishyd.edu",
     "phone": "(123) 456-7893",
-    "imageId": "staff-4"
+    "imageId": "staff-4",
+    "active": 1
   },
   {
     "id": 5,
@@ -52,6 +57,7 @@
     "roleTitle": "School Counselor",
     "email": "s.williams@apsishyd.edu",
     "phone": "(123) 456-7894",
-    "imageId": "staff-5"
+    "imageId": "staff-5",
+    "active": 1
   }
 ]

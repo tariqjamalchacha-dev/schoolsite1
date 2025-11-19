@@ -15,12 +15,14 @@ export default function StaffPage() {
     return PlaceHolderImages.find(img => img.id === imageId);
   }
 
-  const principal = staffMembers.filter(m => m.roleCategory === 'Principal');
-  const sectionHeads = staffMembers.filter(m => m.roleCategory === 'Section Head');
-  const adminStaff = staffMembers.filter(m => m.roleCategory === 'Administrative staff');
-  const teachers = staffMembers.filter(m => m.roleCategory === 'Teacher');
+  const activeStaff = staffMembers.filter(m => m.active === 1);
 
-  const StaffCard = ({ staff }: { staff: typeof staffMembers[0] }) => {
+  const principal = activeStaff.filter(m => m.roleCategory === 'Principal');
+  const sectionHeads = activeStaff.filter(m => m.roleCategory === 'Section Head');
+  const adminStaff = activeStaff.filter(m => m.roleCategory === 'Administrative staff');
+  const teachers = activeStaff.filter(m => m.roleCategory === 'Teacher');
+
+  const StaffCard = ({ staff }: { staff: (typeof staffMembers)[0] }) => {
     const staffImage = getImage(staff.imageId);
     return (
       <Card key={staff.id} className="hover:shadow-lg transition-shadow text-center">

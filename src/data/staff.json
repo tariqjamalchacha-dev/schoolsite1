@@ -24,7 +24,7 @@
     "id": 3,
     "name": "Kulsoom Ashfaq",
     "roleCategory": "Section Head",
-    "roleTitle": "Early Years & Junior",
+    "roleTitle": "Early Years & Junior Section",
     "email": "m.garcia@apsishyd.edu",
     "phone": "(123) 456-7892",
     "imageId": "staff-3",
@@ -32,7 +32,7 @@
   },
   {
     "id": 6,
-    "name": "Coach Michael Miller",
+    "name": "Touseef Ali",
     "roleCategory": "Administrative staff",
     "roleTitle": "Athletic Director",
     "email": "m.miller@apsishyd.edu",
@@ -42,9 +42,9 @@
   },
   {
     "id": 4,
-    "name": "Mr. David Chen",
+    "name": "Touseef Ali",
     "roleCategory": "Teacher",
-    "roleTitle": "English & Literature Teacher",
+    "roleTitle": "Biology A-Levels",
     "email": "d.chen@apsishyd.edu",
     "phone": "(123) 456-7893",
     "imageId": "staff-4",
@@ -52,12 +52,50 @@
   },
   {
     "id": 5,
-    "name": "Mrs. Susan Williams",
+    "name": "Rehan Mazhari",
     "roleCategory": "Teacher",
-    "roleTitle": "School Counselor",
+    "roleTitle": "Accounts A-Levels",
     "email": "s.williams@apsishyd.edu",
     "phone": "(123) 456-7894",
     "imageId": "staff-5",
+    "active": 1
+  },
+  {
+    "id": 7,
+    "name": "S. M. Tariq",
+    "roleCategory": "Teacher",
+    "roleTitle": "Computer A-Levels",
+    "email": "s.williams@apsishyd.edu",
+    "phone": "(123) 456-7894",
+    "imageId": "staff-7",
+    "active": 1
+  },
+  {
+    "id": 8,
+    "name": "Alam Sher",
+    "roleCategory": "Teacher",
+    "roleTitle": "Business Studies A-Levels",
+    "email": "s.williams@apsishyd.edu",
+    "phone": "(123) 456-7894",
+    "imageId": "staff-8",
+    "active": 1
+  },{
+    "id": 9,
+    "name": "Adeel Mehmood",
+    "roleCategory": "Teacher",
+    "roleTitle": "Accounts O-Levels",
+    "email": "s.williams@apsishyd.edu",
+    "phone": "(123) 456-7894",
+    "imageId": "staff-9",
+    "active": 1
+  },{
+    "id": 10,
+    "name": "Mohsin Mughal",
+    "roleCategory": "Teacher",
+    "roleTitle": "Physics A-Levels",
+    "email": "s.williams@apsishyd.edu",
+    "phone": "(123) 456-7894",
+    "imageId": "staff-10",
     "active": 1
   }
 ]

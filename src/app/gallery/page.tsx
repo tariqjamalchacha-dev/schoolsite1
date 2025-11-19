@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import galleryItems from '@/data/gallery.json';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Event Gallery | APSIS Hyd',
@@ -44,6 +45,9 @@ export default function GalleryPage() {
               <CardFooter className="p-4 flex-col items-start">
                 <h3 className="font-semibold text-lg">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
+                <Link href={item.facebookPostUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline mt-2">
+                  more...
+                </Link>
               </CardFooter>
             </Card>
           );

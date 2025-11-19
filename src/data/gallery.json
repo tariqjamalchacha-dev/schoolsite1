@@ -1,9 +1,9 @@
 
 [
-  { "id": 1, "title": "Collaborative Learning", "description": "Students working together in a modern classroom environment.", "imageId": "gallery-1", "date": "2024-05-18T12:00:00.000Z", "category": "Academics" },
-  { "id": 2, "title": "The Knowledge Hub", "description": "Our extensive library, a quiet place for study and research.", "imageId": "gallery-2", "date": "2024-05-17T12:00:00.000Z", "category": "Campus" },
-  { "id": 3, "title": "Go Team!", "description": "Action shot from a heated basketball game in our gymnasium.", "imageId": "gallery-3", "date": "2024-05-16T12:00:00.000Z", "category": "Sports" },
-  { "id": 4, "title": "Future Scientists", "description": "Students engaged in a hands-on experiment in the science lab.", "imageId": "gallery-4", "date": "2024-05-15T12:00:00.000Z", "category": "Academics" },
-  { "id": 5, "title": "Our Campus", "description": "The main school building on a bright, sunny day.", "imageId": "gallery-5", "date": "2024-05-14T12:00:00.000Z", "category": "Campus" },
-  { "id": 6, "title": "Drama Club Performance", "description": "The cast of the school play taking a bow on stage.", "imageId": "gallery-6", "date": "2024-05-13T12:00:00.000Z", "category": "Arts" }
+  { "id": 1, "title": "Collaborative Learning", "description": "Students working together in a modern classroom environment.", "imageId": "gallery-1", "date": "2024-05-18T12:00:00.000Z", "category": "Academics", "facebookPostUrl": "#" },
+  { "id": 2, "title": "The Knowledge Hub", "description": "Our extensive library, a quiet place for study and research.", "imageId": "gallery-2", "date": "2024-05-17T12:00:00.000Z", "category": "Campus", "facebookPostUrl": "#" },
+  { "id": 3, "title": "Go Team!", "description": "Action shot from a heated basketball game in our gymnasium.", "imageId": "gallery-3", "date": "2024-05-16T12:00:00.000Z", "category": "Sports", "facebookPostUrl": "#" },
+  { "id": 4, "title": "Future Scientists", "description": "Students engaged in a hands-on experiment in the science lab.", "imageId": "gallery-4", "date": "2024-05-15T12:00:00.000Z", "category": "Academics", "facebookPostUrl": "#" },
+  { "id": 5, "title": "Our Campus", "description": "The main school building on a bright, sunny day.", "imageId": "gallery-5", "date": "2024-05-14T12:00:00.000Z", "category": "Campus", "facebookPostUrl": "#" },
+  { "id": 6, "title": "Drama Club Performance", "description": "The cast of the school play taking a bow on stage.", "imageId": "gallery-6", "date": "2024-05-13T12:00:00.000Z", "category": "Arts", "facebookPostUrl": "#" }
 ]

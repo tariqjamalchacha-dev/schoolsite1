@@ -14,9 +14,9 @@ export default function StaffPage() {
     return PlaceHolderImages.find(img => img.id === imageId);
   }
 
-  const principal = staffMembers.filter(m => m.role === 'School Principal');
-  const sectionHeads = staffMembers.filter(m => m.role.includes('Head') || m.role.includes('Director') || m.role.includes('Vice Principal'));
-  const teachers = staffMembers.filter(m => !principal.includes(m) && !sectionHeads.includes(m));
+  const principal = staffMembers.filter(m => m.roleCategory === 'Principal');
+  const adminStaff = staffMembers.filter(m => m.roleCategory === 'Administrative staff');
+  const teachers = staffMembers.filter(m => m.roleCategory === 'Teacher');
 
   const StaffCard = ({ staff }: { staff: typeof staffMembers[0] }) => {
     const staffImage = getImage(staff.imageId);
@@ -38,7 +38,7 @@ export default function StaffPage() {
         </CardContent>
         <CardHeader className="p-4 pt-0">
           <CardTitle className="text-xl">{staff.name}</CardTitle>
-          <p className="text-muted-foreground font-medium text-foreground/80">{staff.role}</p>
+          <p className="text-muted-foreground font-medium text-foreground/80">{staff.roleTitle}</p>
         </CardHeader>
       </Card>
     );
@@ -55,37 +55,43 @@ export default function StaffPage() {
 
       <div className="space-y-6">
         {/* Principal Row */}
-        <section>
-          <div className="flex justify-center">
-            {principal.map((staff) => (
-              <StaffCard staff={staff} key={staff.id} />
-            ))}
-          </div>
-        </section>
+        {principal.length > 0 && (
+          <section>
+            <div className="flex justify-center">
+              {principal.map((staff) => (
+                <StaffCard staff={staff} key={staff.id} />
+              ))}
+            </div>
+          </section>
+        )}
 
         <Separator />
 
-        {/* Section Heads Row */}
-        <section>
-           <h2 className="text-2xl font-bold font-headline mb-6 text-center">Section Heads</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
-            {sectionHeads.map((staff) => (
-              <StaffCard staff={staff} key={staff.id} />
-            ))}
-          </div>
-        </section>
+        {/* Administrative Staff Row */}
+        {adminStaff.length > 0 && (
+          <section>
+             <h2 className="text-2xl font-bold font-headline mb-6 text-center">Administrative Staff</h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+              {adminStaff.map((staff) => (
+                <StaffCard staff={staff} key={staff.id} />
+              ))}
+            </div>
+          </section>
+        )}
 
         <Separator />
 
         {/* Teachers Row */}
-        <section>
-          <h2 className="text-2xl font-bold font-headline mb-6 text-center">Teachers & Counselors</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {teachers.map((staff) => (
-              <StaffCard staff={staff} key={staff.id} />
-            ))}
-          </div>
-        </section>
+        {teachers.length > 0 && (
+          <section>
+            <h2 className="text-2xl font-bold font-headline mb-6 text-center">Teachers & Counselors</h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {teachers.map((staff) => (
+                <StaffCard staff={staff} key={staff.id} />
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

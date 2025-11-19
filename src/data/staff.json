@@ -2,24 +2,27 @@
 [
   {
     "id": 1,
-    "name": "Principal Thompson",
-    "role": "School Principal",
+    "name": "Rabia Ashraf",
+    "roleCategory": "Principal",
+    "roleTitle": "School Principal",
     "email": "p.thompson@apsishyd.edu",
     "phone": "(123) 456-7890",
     "imageId": "staff-1"
   },
   {
     "id": 2,
-    "name": "Mr. Robert Davis",
-    "role": "Vice Principal & Math Department Head",
+    "name": "Erum Memon",
+    "roleCategory": "Administrative staff",
+    "roleTitle": "Section Head Senior & Middle Section",
     "email": "r.davis@apsishyd.edu",
     "phone": "(123) 456-7891",
     "imageId": "staff-2"
   },
   {
     "id": 3,
-    "name": "Ms. Maria Garcia",
-    "role": "Head of Science Department",
+    "name": "Kulsoom Ashfaq",
+    "roleCategory": "Administrative staff",
+    "roleTitle": "Section Head Early Years & Junior Section",
     "email": "m.garcia@apsishyd.edu",
     "phone": "(123) 456-7892",
     "imageId": "staff-3"
@@ -27,7 +30,8 @@
   {
     "id": 6,
     "name": "Coach Michael Miller",
-    "role": "Athletic Director",
+    "roleCategory": "Administrative staff",
+    "roleTitle": "Athletic Director",
     "email": "m.miller@apsishyd.edu",
     "phone": "(123) 456-7895",
     "imageId": "staff-6"
@@ -35,7 +39,8 @@
   {
     "id": 4,
     "name": "Mr. David Chen",
-    "role": "English & Literature Teacher",
+    "roleCategory": "Teacher",
+    "roleTitle": "English & Literature Teacher",
     "email": "d.chen@apsishyd.edu",
     "phone": "(123) 456-7893",
     "imageId": "staff-4"
@@ -43,7 +48,8 @@
   {
     "id": 5,
     "name": "Mrs. Susan Williams",
-    "role": "School Counselor",
+    "roleCategory": "Teacher",
+    "roleTitle": "School Counselor",
     "email": "s.williams@apsishyd.edu",
     "phone": "(123) 456-7894",
     "imageId": "staff-5"

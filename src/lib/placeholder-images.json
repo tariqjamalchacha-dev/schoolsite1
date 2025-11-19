@@ -3,7 +3,7 @@
     {
       "id": "staff-1",
       "description": "Portrait of Principal Thompson",
-      "imageUrl": "/images/principal_apsis.png",
+      "imageUrl": "/images/Principal_APSIS.jpg",
       "imageHint": "woman portrait"
     },
     {
@@ -75,7 +75,7 @@
     {
       "id": "hero-building",
       "description": "A modern school building",
-      "imageUrl": "/images/building.png",
+      "imageUrl": "/images/Building.png",
       "imageHint": "school building"
     }
   ]

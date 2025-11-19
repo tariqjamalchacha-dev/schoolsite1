@@ -91,7 +91,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center px-4">
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/logo-svg.svg" alt="APSIS Hyd Logo" width={28} height={28} />
+            <Image src="/images/Logo-svg.svg" alt="APSIS Hyd Logo" width={28} height={28} />
             <span className="font-bold font-headline text-lg">APSIS Hyd</span>
           </Link>
         </div>

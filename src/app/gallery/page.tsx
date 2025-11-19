@@ -42,10 +42,12 @@ export default function GalleryPage() {
                   </div>
                 )}
               </CardContent>
-              <CardFooter className="p-4 flex-col items-start">
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-                <Link href={item.facebookPostUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-accent font-bold hover:underline mt-2">
+              <CardFooter className="p-4 flex justify-between items-end">
+                <div>
+                  <h3 className="font-semibold text-lg">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                </div>
+                <Link href={item.facebookPostUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-accent font-bold hover:underline flex-shrink-0">
                   more...
                 </Link>
               </CardFooter>

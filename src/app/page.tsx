@@ -88,18 +88,22 @@ export default function Home() {
                       />
                     </div>
                   )}
-                  <div className="flex flex-col flex-grow p-6">
-                    <CardHeader className="p-0">
+                  <div className="flex flex-col flex-grow">
+                    <CardHeader className="p-6 pb-0">
                       <CardTitle className="text-card-foreground">{item.title}</CardTitle>
-                      <CardDescription className="text-muted-foreground">{item.category}</CardDescription>
+                      <CardDescription className="text-muted-foreground">{format(new Date(item.date), 'MMMM d, yyyy')}</CardDescription>
                     </CardHeader>
-                    <CardContent className="p-0 pt-4 flex-grow">
+                    <CardContent className="p-6 pt-4 flex-grow">
                       <p className="text-muted-foreground">{item.description}</p>
                     </CardContent>
-                    <CardFooter className="p-0 pt-4 text-sm text-muted-foreground">
-                      <p>{format(new Date(item.date), 'MMMM d, yyyy')}</p>
-                    </CardFooter>
                   </div>
+                  <CardFooter className="p-6 pt-0 flex flex-col items-start w-full">
+                    <div className="w-full mt-2 flex justify-end">
+                      <Link href={item.facebookPostUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-accent font-bold hover:underline">
+                        more...
+                      </Link>
+                    </div>
+                  </CardFooter>
                 </Card>
               );
             })}

@@ -42,14 +42,16 @@ export default function GalleryPage() {
                   </div>
                 )}
               </CardContent>
-              <CardFooter className="p-4 flex justify-between items-end">
-                <div>
+              <CardFooter className="p-4 flex flex-col items-start w-full">
+                <div className="w-full">
                   <h3 className="font-semibold text-lg">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
-                <Link href={item.facebookPostUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-accent font-bold hover:underline flex-shrink-0">
-                  more...
-                </Link>
+                <div className="w-full mt-2 flex justify-end">
+                    <Link href={item.facebookPostUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-accent font-bold hover:underline">
+                    more...
+                    </Link>
+                </div>
               </CardFooter>
             </Card>
           );
